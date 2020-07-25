@@ -1,10 +1,18 @@
 #! /usr/bin/env bash
 
+# Change directory to here
+cd "$(dirname "$0")"
+
 # Dirs and files
 mkdir -p "$HOME/projects"                 # Root dir shared with Coder
 mkdir -p "$HOME/.config/code-server"      # Coder's config dir
 mkdir -p "$HOME/.local/share/code-server" # Coder's working dir 
 mkdir -p "$HOME/.ssh"                     # SSH config dir (You may use it via Git)
+
+# Copy initial configs
+if [ ! -e "$HOME/.config/code-server/config.yaml" ]; then
+  cp config.yaml "$HOME/.config/code-server"
+fi
 
 docker run \
   --name code-server \
