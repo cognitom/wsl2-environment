@@ -15,7 +15,7 @@ Open bash terminal (on Ubuntu).
 Make sure you have `.ssh` dir:
 
 ```bash
-$ mkdir -p `/.ssh
+$ mkdir -p ~/.ssh
 ```
 
 Add your private key into the dir. Don't forget to change its permition to `600`.
