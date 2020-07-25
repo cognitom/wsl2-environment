@@ -1,0 +1,22 @@
+#! /usr/bin/env bash
+
+# Dirs and files
+mkdir -p "$HOME/projects"                 # Root dir shared with Coder
+mkdir -p "$HOME/.config/code-server"      # Coder's config dir
+mkdir -p "$HOME/.local/share/code-server" # Coder's working dir 
+mkdir -p "$HOME/.ssh"                     # SSH config dir (You may use it via Git)
+
+docker run \
+  --name code-server \
+  --detach \
+  --restart unless-stopped \
+  --publish 127.0.0.1:8443:8080 \
+  --user $(id -u):$(id -g) \
+  --mount type=bind,source="$HOME/projects",target="/home/coder/project" \
+  --mount type=bind,source="$HOME/.config/code-server",target="/home/coder/.config/code-server" \
+  --mount type=bind,source="$HOME/.local/share/code-server",target="/home/coder/.local/share/code-server" \
+  --mount type=bind,source="$HOME/.ssh",target="/home/coder/.ssh" \
+  --mount type=bind,source="$HOME/.gitconfig",target="/home/coder/.gitconfig" \
+  --workdir "/home/coder/project" \
+  codercom/code-server:latest
+
