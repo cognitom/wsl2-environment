@@ -27,7 +27,7 @@ $ git config --global user.name "John Doh"
 $ git config --global user.email "john.doh@example.com"
 ```
 
-## Applications
+## Setting up Applications
 
 ### code-server
 
@@ -36,3 +36,9 @@ $ bash code-server/up
 ```
 
 Open http://localhost:8443 from your browser on Windows 10.
+
+## Docker container management
+
+The container which `run` from Ubuntu is accessible from Docker Desktop. So, just open "Dashboard" of Docker Desktop.
+
+![Docker Desktop](assets/docker-win.png)
