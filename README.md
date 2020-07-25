@@ -39,6 +39,6 @@ Open http://localhost:8443 from your browser on Windows 10.
 
 ## Docker container management
 
-The container which `run` from Ubuntu is accessible from Docker Desktop. So, just open "Dashboard" of Docker Desktop.
+The container which `run` from Ubuntu is accessible from Docker Desktop. So, just open "Dashboard" of Docker Desktop *on Windows*.
 
 ![Docker Desktop](assets/docker-win.png)
