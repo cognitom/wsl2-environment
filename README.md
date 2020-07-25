@@ -12,7 +12,15 @@
 
 Open bash terminal (on Ubuntu).
 
-Add your private key into `~/.ssh` dir. Don't forget to change its permition to `600`. Then, add some configuration to Git:
+Make sure you have `.ssh` dir:
+
+```bash
+$ mkdir -p `/.ssh
+```
+
+Add your private key into the dir. Don't forget to change its permition to `600`.
+
+Then, add some configuration to Git:
 
 ```bash
 $ git config --global user.name "John Doh"
